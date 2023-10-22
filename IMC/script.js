@@ -8,26 +8,48 @@ function coletaDados () {
     nome = document.querySelector('.nome');
     altura = document.querySelector('.altura');
     peso = document.querySelector('.peso');
+    reposta = document.querySelector('.resposta')
 };
 
 function calculoImc (peso, altura) {
     ress = peso / (altura * altura);
     imc = ress.toFixed(2)
-    return imc;
+    return imc, peso, altura;
 }
 
-function verificaImc(peso, imc) {
-    if (peso < 0 || peso >= 400) {
+function verificaImc(imc) {
+    if (imc < 0 || imc >= 400) {
         alert("Peso invalido!!! informe um valor aceitável");
         setTimeout(function() { location. reload(); }, 3000)
     }
-    // Abaixo de 17	Muito abaixo do peso
-    // Entre 17 e 18,49	Abaixo do peso
-    // Entre 18,5 e 24,99	Peso normal
-    // Entre 25 e 29,99	Acima do peso
-    // Entre 30 e 34,99	Obesidade I
-    // Entre 35 e 39,99	Obesidade II (severa)
-    // Acima de 40	Obesidade III (mórbida)
+
+    if (imc >= 0 && imc < 17) {
+        reposta.innerHTML = `seu imc é ${imc} e você esta muito abaixo do peso.`
+    }
+
+    if (imc > 17 && imc < 18.49) {
+        reposta.innerHTML = `seu imc é ${imc} e você esta abaixo do peso.`
+    }
+
+    if (imc > 18.5 && imc < 24.99) {
+        reposta.innerHTML = `seu imc é ${imc} e você esta no peso ideal.`
+    }
+
+    if (imc > 25 && imc < 29.99) {
+        reposta.innerHTML = `seu imc é ${imc} e você esta acima do peso.`
+    }
+
+    if (imc > 30 && imc < 34.99) {
+        reposta.innerHTML = `seu imc é ${imc} e é caracterizado como obesidade I.`
+    }
+
+    if (imc > 35 && imc < 39.99) {
+        reposta.innerHTML = `seu imc é ${imc} e é caracterizado como obesidade II (severa).`
+    }
+
+    if (imc > 40) {
+        reposta.innerHTML = `seu imc é ${imc} e é caracterizado como obesidade III (mórbida).`
+    }
 }
 
 function limpaDados () {
@@ -42,6 +64,6 @@ myButton.addEventListener('click', (evento) => {
     evento.preventDefault()
     coletaDados();
     calculoImc(peso.value, altura.value);
-    verificaImc(peso, imc)
+    verificaImc(peso, imc);
     limpaDados();
 });

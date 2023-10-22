@@ -15,8 +15,6 @@ body {
 
 main {
     margin-top: 15%;
-    max-width: 40%;
-    min-width: 60%;
     background-color: rgb(26, 133, 204);
     color: white;
     display: flex;
@@ -25,6 +23,14 @@ main {
     padding: 8px;
     border-radius: 10px;
     box-shadow: 10px 5px 10px black;
+}
+
+main hr {
+    width: 105%;
+    background-color: black;
+    height: 4px;
+    margin: 8px 0;
+    border-radius: 10px;
 }
 
 main form {
@@ -36,18 +42,38 @@ main form {
     padding: 8px;
 }
 
-main hr {
-    width: 100%;
-    background-color: black;
-    height: 4px;
-    margin: 8px 0;
+main form fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4px;
+    padding: 16px;
+
     border-radius: 10px;
 }
 
+main form fieldset label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main form fieldset .myButton {
+    margin: 8px;
+    padding: 8px;
+    background-color: rgba(0, 255, 255, 0.123);
+    color: white;
+    border-radius: 5px;
+}
+
+
 main div {
-    width: 80%;
+    width: 216px;
     height: 100px;
     background-color: black;
     margin: 8px 0;
     border-radius: 10px;
+    color: rgb(240, 218, 22);
+    padding: 16px;
 }

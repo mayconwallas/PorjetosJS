@@ -11,16 +11,18 @@
         <h1>Calculadora - IMC</h1>
         <hr>
         <form action="">
-            <label for="nome">
-                Nome: <input type="text" id="nome">
-            </label>
-            <label for="altura">
-                Altura: <input type="text" id="altura">
-            </label>
-            <label for="peso">
-                Peso: <input type="text" id="peso">
-            </label>
-            <button>Calcular</button>
+            <fieldset>
+                <label for="nome">
+                    Nome: <input type="text" class="nome" id="nome" placeholder="Primeiro nome">
+                </label>
+                <label for="altura">
+                    Altura: <input type="text"  class="altura" id="altura" placeholder="altura em metros">
+                </label>
+                <label for="peso">
+                    Peso: <input type="text" class="peso" id="peso" placeholder="Peso em quilos">
+                </label>
+                <button class="myButton">Calcular</button>
+            </fieldset>
         </form>
         <div class="ress"></div>
     </main>

@@ -16,8 +16,10 @@ function calculoImc (peso, altura) {
     return imc;
 }
 
-function verificaImc(imc) {
-    if (true) {}
+function verificaImc(peso, imc) {
+    if (peso < 0 || peso >= 400) {
+
+    }
     // Abaixo de 17	Muito abaixo do peso
     // Entre 17 e 18,49	Abaixo do peso
     // Entre 18,5 e 24,99	Peso normal

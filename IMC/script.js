@@ -18,7 +18,8 @@ function calculoImc (peso, altura) {
 
 function verificaImc(peso, imc) {
     if (peso < 0 || peso >= 400) {
-
+        alert("Peso invalido!!! informe um valor aceitável");
+        setTimeout(function() { location. reload(); }, 3000)
     }
     // Abaixo de 17	Muito abaixo do peso
     // Entre 17 e 18,49	Abaixo do peso
@@ -27,7 +28,6 @@ function verificaImc(peso, imc) {
     // Entre 30 e 34,99	Obesidade I
     // Entre 35 e 39,99	Obesidade II (severa)
     // Acima de 40	Obesidade III (mórbida)
-  
 }
 
 function limpaDados () {
@@ -42,6 +42,6 @@ myButton.addEventListener('click', (evento) => {
     evento.preventDefault()
     coletaDados();
     calculoImc(peso.value, altura.value);
-
+    verificaImc(peso, imc)
     limpaDados();
 });

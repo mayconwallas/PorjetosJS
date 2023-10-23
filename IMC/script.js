@@ -1,55 +1,62 @@
-const myButton = document.querySelector('.myButton')
-let nome;
-let altura;
-let peso;
-let imc;
+const myButton = document.querySelector('.myButton');
+const resposta = document.querySelector('.resposta');
 
-function coletaDados () {
-    nome = document.querySelector('.nome');
-    altura = document.querySelector('.altura');
-    peso = document.querySelector('.peso');
-    reposta = document.querySelector('.resposta')
+function pegaNome () {
+    nome = document.querySelector('.nome').value;
+    return nome;
 };
 
-function calculoImc (peso, altura) {
-    ress = peso / (altura * altura);
-    imc = ress.toFixed(2)
-    return imc, peso, altura;
+function pegaAltura () {
+    altura = parseFloat(document.querySelector('.altura').value);
+    return altura;
+};
+
+function verificaAltura (altura) {
+    if (altura < 0.50 || altura >= 2.50 ) {
+        alert("Altura invalida!!! informe um valor aceitável");
+        mensagem = `Erro!`;
+        setTimeout(function() { location. reload(); }, 200)
+    }
 }
 
-function verificaImc(imc) {
-    if (imc < 0 || imc >= 400) {
+function pegaPeso () {
+    peso = parseFloat(document.querySelector('.peso').value);
+    return peso;
+};
+
+function verificaPeso (peso) {
+    if (peso < 0 || peso >= 400) {
         alert("Peso invalido!!! informe um valor aceitável");
-        setTimeout(function() { location. reload(); }, 3000)
+        mensagem = `Erro!`;
+        setTimeout(function() { location. reload(); }, 200)
     }
+}
 
-    if (imc >= 0 && imc < 17) {
-        reposta.innerHTML = `seu imc é ${imc} e você esta muito abaixo do peso.`
-    }
+function calculaImc (peso, altura) {
+    const imc = (peso / (altura * altura)).toFixed(2)
+    return imc
+}
 
-    if (imc > 17 && imc < 18.49) {
-        reposta.innerHTML = `seu imc é ${imc} e você esta abaixo do peso.`
+function verificaImc(nome, imc) {
+    if (imc >= 0 && imc <= 17) {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e você esta muito abaixo do peso.`
+    } else if (imc > 17 && imc < 18.49) {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e você esta abaixo do peso.`
+    } else if (imc > 18.5 && imc < 24.99) {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e você esta no peso ideal.`
+    } else if (imc > 25 && imc < 29.99) {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e você esta acima do peso.`
+    } else if (imc > 30 && imc < 34.99) {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e é caracterizado como obesidade I.`
+    } else if (imc > 35 && imc < 39.99) {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e é caracterizado como obesidade II (severa).`
+    } else {
+        mensagem = `Olá ${nome}, seu imc é ${imc} e é caracterizado como obesidade III (mórbida).`
     }
+}
 
-    if (imc > 18.5 && imc < 24.99) {
-        reposta.innerHTML = `seu imc é ${imc} e você esta no peso ideal.`
-    }
-
-    if (imc > 25 && imc < 29.99) {
-        reposta.innerHTML = `seu imc é ${imc} e você esta acima do peso.`
-    }
-
-    if (imc > 30 && imc < 34.99) {
-        reposta.innerHTML = `seu imc é ${imc} e é caracterizado como obesidade I.`
-    }
-
-    if (imc > 35 && imc < 39.99) {
-        reposta.innerHTML = `seu imc é ${imc} e é caracterizado como obesidade II (severa).`
-    }
-
-    if (imc > 40) {
-        reposta.innerHTML = `seu imc é ${imc} e é caracterizado como obesidade III (mórbida).`
-    }
+function imprimeMensagem() {
+    resposta.innerHTML = mensagem;
 }
 
 function limpaDados () {
@@ -61,9 +68,14 @@ function limpaDados () {
 
 
 myButton.addEventListener('click', (evento) => {
-    evento.preventDefault()
-    coletaDados();
-    calculoImc(peso.value, altura.value);
-    verificaImc(peso, imc);
+    evento.preventDefault();
+    const nome = pegaNome();
+    const altura = pegaAltura();
+    verificaAltura(altura);
+    const peso = pegaPeso();
+    verificaPeso(peso);
+    const imc = calculaImc(peso, altura);
+    verificaImc(nome, imc);
+    imprimeMensagem();
     limpaDados();
 });

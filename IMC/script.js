@@ -2,32 +2,30 @@ const myButton = document.querySelector('.myButton');
 const resposta = document.querySelector('.resposta');
 
 function pegaNome () {
-    nome = document.querySelector('.nome').value;
+    const nome = document.querySelector('.nome').value;
     return nome;
 };
 
 function pegaAltura () {
-    altura = parseFloat(document.querySelector('.altura').value);
+    const altura = parseFloat(document.querySelector('.altura').value);
     return altura;
 };
 
 function verificaAltura (altura) {
     if (altura < 0.50 || altura >= 2.50 ) {
         alert("Altura invalida!!! informe um valor aceitável");
-        mensagem = `Erro!`;
         setTimeout(function() { location. reload(); }, 200)
     }
 }
 
 function pegaPeso () {
-    peso = parseFloat(document.querySelector('.peso').value);
+    const peso = parseFloat(document.querySelector('.peso').value);
     return peso;
 };
 
 function verificaPeso (peso) {
     if (peso < 0 || peso >= 400) {
         alert("Peso invalido!!! informe um valor aceitável");
-        mensagem = `Erro!`;
         setTimeout(function() { location. reload(); }, 200)
     }
 }
@@ -38,6 +36,7 @@ function calculaImc (peso, altura) {
 }
 
 function verificaImc(nome, imc) {
+    let mensagem;
     if (imc >= 0 && imc <= 17) {
         mensagem = `Olá ${nome}, seu imc é ${imc} e você esta muito abaixo do peso.`
     } else if (imc > 17 && imc < 18.49) {
@@ -53,9 +52,10 @@ function verificaImc(nome, imc) {
     } else {
         mensagem = `Olá ${nome}, seu imc é ${imc} e é caracterizado como obesidade III (mórbida).`
     }
+    return mensagem;
 }
 
-function imprimeMensagem() {
+function imprimeMensagem(mensagem) {
     resposta.innerHTML = mensagem;
 }
 
@@ -75,7 +75,7 @@ myButton.addEventListener('click', (evento) => {
     const peso = pegaPeso();
     verificaPeso(peso);
     const imc = calculaImc(peso, altura);
-    verificaImc(nome, imc);
-    imprimeMensagem();
+    const mensagemFinal = verificaImc(nome, imc);
+    imprimeMensagem(mensagemFinal);
     limpaDados();
 });

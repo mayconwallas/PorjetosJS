@@ -21,6 +21,7 @@
     background-color: darkcyan;
     padding: 20px;
     border-radius: 5px;
+    gap: 15px;
   }
   
   span {
@@ -34,4 +35,12 @@
     height: 36px;
     width: 56px;
     cursor: pointer;
+  }
+
+  .myButton {
+    height: 36px;
+    width: 56px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(44, 178, 202);
   }

@@ -1,4 +1,5 @@
-const myButton = document.querySelector('.myButton');
+const myButton = document.querySelector('.ButtonCalcular');
+const ButtonReset = document.querySelector('.ButtonReset');
 const resposta = document.querySelector('.resposta');
 
 function pegaNome () {
@@ -55,6 +56,11 @@ function verificaImc(nome, imc) {
     return mensagem;
 }
 
+function reseta(mensagem) {
+    mensagem = ""
+    resposta.innerHTML = mensagem;
+}
+
 function imprimeMensagem(mensagem) {
     resposta.innerHTML = mensagem;
 }
@@ -65,6 +71,10 @@ function limpaDados () {
     document.querySelector('.peso').value = '';
 };
 
+ButtonReset.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    reseta();
+})
 
 
 myButton.addEventListener('click', (evento) => {

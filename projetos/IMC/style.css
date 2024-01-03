@@ -59,7 +59,7 @@ main form fieldset label {
     justify-content: center;
 }
 
-main form fieldset .myButton {
+.ButtonCalcular, .ButtonReset {
     margin: 8px;
     padding: 8px;
     background-color: rgba(0, 255, 255, 0.123);
@@ -68,7 +68,7 @@ main form fieldset .myButton {
 }
 
 
-main div {
+.resposta {
     width: 216px;
     height: 100px;
     background-color: black;

@@ -1,4 +1,6 @@
-# PorjetosJS
+# ProjetosJS
 Um pouco das minhas habilidades com javaScript, html e css.
 
-javascript
+Projetos javascript
+
+![Escolha a cor de fundo do site.](./imagens/trocaCor.gif)

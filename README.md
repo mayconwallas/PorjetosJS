@@ -3,5 +3,4 @@
 
 ## Projetos javascript
 
-![Escolha a cor de fundo do site.](./imagens/trocaCor.gif) 
-<img src="./imagens/trocaCor.gif" width="50%">
+<img src="./imagens/trocaCor.gif" alt="gif do projeto de troca de cores da pagina " width="25%">

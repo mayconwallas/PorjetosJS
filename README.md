@@ -1,2 +1,4 @@
 # PorjetosJS
-Repositório para todos meus projetos com HTML, CSS e JS.
+Um pouco das minhas habilidades com javaScript, html e css.
+
+javascript

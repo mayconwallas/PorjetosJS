@@ -1,5 +1,6 @@
-# ProjetosJS
-## Um pouco das minhas habilidades com javaScript, html e css.
+# Projetos em javaScript
+
+Um pouco das minhas habilidades com javaScript, html e css.
 
 ## Projetos javascript
 

@@ -1,0 +1,18 @@
+main {
+    text-align: center;
+}
+
+main img{
+width: 250px;
+height: 300px;
+border-style: solid;
+border-color: rgb(69, 96, 138);
+}
+
+.blocoImagens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;    
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./imagens/iconjs.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/form.css">
+        <title>Pesquisa</title>
+    </head>       
+    <body>
+       <div id="interface">
+        <header class="cabecalho">
+			<nav class="menu">
+				<div class="logos-menu">
+					<h1><img class="logo-menu-chapeu" src="./imagens/chapeudepalha.png" alt="icone chapou de palha">One
+						Piece</h1>
+
+					<img id="menu-button" class="logo-menu-humburg" src="./imagens/menu-hamburguer.svg" alt="">
+				</div>
+				<ul id="efeito-menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="historia.html">Historia</a></li>
+					<li><a href="imagens.html">Fotos</a></li>
+					<!-- <li><a href="formulario.html">formulário</a></li> -->
+					<li><a href="contato.html">Fale conosco</a></li>
+				</ul>
+			</nav>
+		</header>
+				
+		    <main id="corpo">
+                <div>
+                    <a class="btn-fixed" href="#top">
+                        <span class="material-symbols-outlined">
+                            arrow_upward
+                        </span>
+                    </a>
+                </div>
+                <form action="/formulario-contato" method="post">
+                    <fieldset>
+                        <h1>Formulário de Pesquisa</h1>
+                        
+                        <div id="cadastro">
+                            <label for="">Nome: </label>
+                                <input type="text" id="nome"><br>
+                            </label>
+                            <label for="email">E-mail: </label>
+                                <input type="text" id="email"><br>
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="radio" name="sexo" value="masculino" checked> Masculino
+                            </label>
+                            <label class="checkbox">
+                                <input type="radio" name="sexo" value="feminino"> Feminino
+                            </label>
+                        </div>
+                        
+                        
+
+                        <div id="favorito">
+
+                            <p>com base nas informações adquiridas nos epsodios e nos textos aqui desse site, responta as perguntas abaixo.</p>
+                            <label>Personagem favorito.</label><br>
+                            <input type="checkbox" name="" id="">Monkey D. Luffy(Capitão)
+                            <input type="checkbox" name="" id="">Roronoa Zoro (Espadachim)
+                            <input type="checkbox" name="" id="">Usopp (Atirador)
+                            <input type="checkbox" name="" id="">Vinsmoke Sanji (Cozinheiro)
+                            <input type="checkbox" name="" id="">Nami (Navegadora)
+                            <input type="checkbox" name="" id="">Tony Tony Chopper (Médico)
+                            <input type="checkbox" name="" id="">Nico Robin (Arqueóloga)
+                            <input type="checkbox" name="" id="">Franky (Carpinteiro/Construtor)
+                            <input type="checkbox" name="" id="">Brook (Músico)
+                            <input type="checkbox" name="" id="">Jinbe (Timoneiro)
+                        </div>
+                        <div class="msgfavorito">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea rows="6" style="width: 20em" id="mensagem" name="mensagem">Fale um pouco do seu personagem favorito.</textarea>
+                        </div>
+                          
+                        <button type="submit" class="botao submit">Enviar</button>
+                    </fieldset>
+                </form>
+        </section>
+        <footer class="rodape">
+            <p>Maycon Wallas - 2023</p>
+            <div>
+                <a href="https://github.com/mayconwallas" target="_blank">GitHub</a>
+                &#10072;
+                <a href="https://www.instagram.com/mayconwallasbs/" target="_blank">instagram</a>
+                &#10072;
+                <a href="https://www.linkedin.com/in/maycon-wallas-balbino-da-silva-702710179/"
+                    target="_blank">linkedin</a>
+            </div>
+
+        </footer>
+        </div>
+        <script src="./js/menu.js"></script>
+     </body>
+</html>

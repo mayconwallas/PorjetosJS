@@ -1,0 +1,28 @@
+/* conteudo do site */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+main p {
+    padding: 8px;
+}
+
+main picture {
+    text-align: center;
+}
+
+.lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+}
+
+.lateral ol {
+    list-style: none;
+    text-align: center;
+
+}
